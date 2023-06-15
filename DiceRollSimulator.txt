@@ -1,4 +1,5 @@
 #Scerario: Two Users will roll the dice, who will reach a total count of 25 will win this game
+
 from random import *
 class Dice:
     def __init__(self):
@@ -33,9 +34,12 @@ class Dice:
                 print("Enter a valid input")
     def play(self):
         while True:
-            self.user_a()
+            self.user_a()         
+            if self.user_a_count >= 25:
+                print(self.result())
+                break
             self.user_b()
-            if self.result() == True:
+            if self.user_b_count >= 25:
                 print(self.result())
                 break
 
